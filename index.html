@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <h1><b>Multi-Agent Simulation for Corn Growth Modeling: An Interactive Environment</b></h1>
+  <h4><b>Created by Logan Nitzsche</b></h4>
+</head>
+<body>
+  <span>GDU: <span id="gduValue">calculating...</span></span>
+  <div class="gui">
+        <input type="text" id="textBox" placeholder="Coming Soon" style="display: none;">
+      <div class="simulation">
+      <div class="corn-field">
+        <div class="corn-plant1"></div>
+        <div class="corn-plant2"></div>
+        <div class="corn-plant3"></div>
+        <div class="corn-plant4"></div>
+        <div class="corn-plant5"></div>
+        <div class="corn-plant6"></div>
+        <div class="corn-plant7"></div>
+        <div class="corn-plant8"></div>
+        <div class="corn-plant9"></div>
+        <div class="corn-plant10"></div>
+        <div class="corn-plant11"></div>
+        <div class="corn-plant12"></div>
+        <div class="corn-plant13"></div>
+        <div class="corn-plant14"></div>
+        <div class="corn-plant15"></div>
+        <div class="corn-plant16"></div>
+        <div class="corn-plant17"></div>
+        <div class="corn-plant18"></div>
+        <div class="corn-plant19"></div>
+        <div class="corn-plant20"></div>
+      </div>
+      <div class="soil">
+      </div>
+    </div>
+    <div class="toggles">
+    <h4><u><b>Toggles</b></u></h4>
+    <label for="soil-texture">Soil Texture:</label>
+    <br>
+        <select name="soil-texture" id="soil-texture">
+            <option value="fine">Fine Soil</option>
+            <option value="coarse">Coarse Soil</option>
+        </select>
+    <br>
+      <label for="seed-zone">Seed-zone soil moisture:</label>
+        <select id="seed-zone" name="seed-zone">
+            <option value="optimum">Optimum</option>
+            <option value="belowoptimum">Below Optimum</option>
+        </select>
+        <br>
+        <label for="seed-bed">Seed-bed Condition:</label>
+        <select id="seed-bed" name="seed-bed">
+            <option value="normal">Normal</option>
+            <option value="soilcrusting">Soil Crusting</option>
+            <option value="massiveclods">Massive Clods</option>
+        </select>
+        <br>
+        <label for="seeding-depth">Seeding Depth:</label>
+        <br>
+        <select id="seeding-depth" name="seeding-depth">
+          <option value="one">1 inch</option>
+          <option value="onefive">1.5 inches</option>
+          <option value="two">2 inches</option>
+          <option value="twofive">2.5 inches</option>
+          <option value="three">3 inches</option>
+        </select>
+        <br>
+        <label for="planting-date">Planting Date:</label>
+        <br>
+        <select id="planting-date" name="planting-date">
+          <option value="during">Traditional</option>
+          <option value="before">Before April</option>
+          <option value="after">After May 15</option>
+        </select>
+        <br><br><br><br>
+        <button id="runSimulation">Run Simulation</button>
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="waterAllButton">Water All Plants</button>
+    <button id="openTextBox">Open Text Box</button>
+    <button id="restartSimulation">Restart Simulation</button>
+    <button id="simulationAssumptions">View Assumptions</button>
+  </div>
+  <br>
+  <a href="worksCited.html">Works Cited</a>
+  <script src="script.js"></script>
+</body> 
+</html>
