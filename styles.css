@@ -1,210 +1,220 @@
-  body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-align: center;
-    background-color: #f1afaf;
-    padding: 0;
-    margin: 0;
-  }
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  background-color: #f1afaf;
+  padding: 0;
+  margin: 0;
+}
 
-  .gui {
-    display: flex;
-    justify-content: space-between;
-  }
+a {
+  color: black;
+  text-decoration: none;
+}
 
-  .toggles {
-    flex: .2;
-    margin: 1vw;
-    height: 400px;
-    background-color: #b300ff;
-    overflow: hidden;
-  }
-  
-  .simulation {
-    flex: 1;
-    margin: 1vw;
-    height: 400px;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .corn-field {
-    height: 340px;
-    background-color: #c2d94c;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
+a:hover {
+  text-decoration: underline;
+  color: #b300ff;
+}
 
-  .soil {
-    height: 60px;
-    background-color: brown;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
+.gui {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .buttons {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .corn-plant1 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-  }
-  .corn-plant2 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-  }
-  .corn-plant3 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 15%;
-  }
-  .corn-plant4 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-  }
-  .corn-plant5 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-  }
-  .corn-plant6 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-  }
-  .corn-plant7 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 35%;
-  }
-  .corn-plant8 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-  }
-  .corn-plant9 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 45%;
-  }
-  .corn-plant10 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-  }
-  .corn-plant11 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 55%;
-  }
-  .corn-plant12 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 60%;
-  }
-  .corn-plant13 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 65%;
-  }
-  .corn-plant14 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 70%;
-  }
-  .corn-plant15 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 75%;
-  }
-  .corn-plant16 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 80%;
-  }
-  .corn-plant17 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 85%;
-  }
-  .corn-plant18 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 90%;
-  }
-  .corn-plant19 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 95%;
-  }
-  .corn-plant20 {
-    width: 10px;
-    height: 0px;
-    background-color: green;
-    position: absolute;
-    bottom: 0;
-    left: 0%;
-  }
+.toggles {
+  flex: .2;
+  margin: 1vw;
+  height: 400px;
+  background-color: #b300ff;
+  overflow: hidden;
+}
+
+.simulation {
+  flex: 1;
+  margin: 1vw;
+  height: 400px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.corn-field {
+  height: 340px;
+  background-color: #c2d94c;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.soil {
+  height: 60px;
+  background-color: brown;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.corn-plant1 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+.corn-plant2 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+}
+.corn-plant3 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+}
+.corn-plant4 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+}
+.corn-plant5 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+.corn-plant6 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
+.corn-plant7 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+}
+.corn-plant8 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+}
+.corn-plant9 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+}
+.corn-plant10 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.corn-plant11 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 55%;
+}
+.corn-plant12 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+}
+.corn-plant13 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 65%;
+}
+.corn-plant14 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+}
+.corn-plant15 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 75%;
+}
+.corn-plant16 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+}
+.corn-plant17 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 85%;
+}
+.corn-plant18 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 90%;
+}
+.corn-plant19 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 95%;
+}
+.corn-plant20 {
+  width: 10px;
+  height: 0px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+}
