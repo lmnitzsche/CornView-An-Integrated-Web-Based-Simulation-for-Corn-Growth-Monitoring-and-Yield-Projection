@@ -1,7 +1,8 @@
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
-  background-color: #f1afaf;
+  background-image: url("images/corn-field.jpg");
+  background-size: cover;
   padding: 0;
   margin: 0;
 }
@@ -12,8 +13,16 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
   color: #b300ff;
+  font-weight: bolder;
+}
+.highlight {
+  background-color: #ffffff;
+}
+
+.port {
+  color: white;
+  text-shadow: black;
 }
 
 .gui {
