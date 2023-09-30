@@ -6,6 +6,7 @@ const selectSeedZone = document.getElementById("seed-zone");
 const selectSeedBed = document.getElementById("seed-bed");
 const selectSeedingDepth = document.getElementById("seeding-depth");
 const selectPlantingDate = document.getElementById("planting-date");
+const fileInput = document.getElementById("fileInput");
 
 //MAIN
 var maxTemp = parseInt(prompt("Enter the day 1 maximum temperature:"));
@@ -54,6 +55,30 @@ var RS = false; //R6 Stage... Final Stage
 function updateGDUCount() {
   gduCount.textContent = GDU;
 }
+//FINISH 80html
+fileInput.addEventListener("change", function () {
+  const selectedFile = fileInput.files[0];
+
+  if(selectedFile) {
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+      const fileText = event.target.result;
+      const values = fileText.split(',');
+
+      for(let i = 0; i < values.length; i++) {
+        const trimmedValue = values[i].trim();
+        alert(`Day ${i + 1}: ${trimmedValue}`);
+      }
+      fileInput.value = null;
+    };
+
+    reader.readAsText(selectedFile);
+  } 
+  else {
+    console.log("No file selected");
+  }
+});
 
 simulationAssumptions.addEventListener("click", () => {
     alert("This 20-crop simulation assumes statistically average upkeep.");

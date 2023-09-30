@@ -35,7 +35,7 @@ a:hover {
   margin: 1vw;
   height: 400px;
   background-color: #b300ff;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .simulation {
