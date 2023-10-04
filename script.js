@@ -33,7 +33,9 @@ var seedingDepth = "one"; //+15 GDU for each inch below two inches
 var plantingDate = "during"; //during by default
 var growthLevels = 0;
 var days = 2;
+var count = 1; //used in read in function
 var addedGDU = 0;
+const temperatureData = []; //values from file
 var randomizerGDU = Math.floor(Math.random() * 30) + 30;
 
 GDU += randomizerGDU; //add 30-60 GDU for fine soil
@@ -58,7 +60,6 @@ function updateGDUCount() {
 //FINISH 80html
 fileInput.addEventListener("change", function () {
   const selectedFile = fileInput.files[0];
-
   if(selectedFile) {
     const reader = new FileReader();
 
@@ -66,18 +67,121 @@ fileInput.addEventListener("change", function () {
       const fileText = event.target.result;
       const values = fileText.split(',');
 
-      for(let i = 0; i < values.length; i++) {
-        const trimmedValue = values[i].trim();
-        alert(`Day ${i + 1}: ${trimmedValue}`);
+      for(let i = 0; i < values.length; i += 2) {
+        const maxTempFile = parseInt(values[i].trim());
+        const minTempFile = parseInt(values[i + 1].trim());
+        temperatureData.push({maxTempFile, minTempFile});
+        alert(`Day ${count}: ${maxTempFile}, ${minTempFile}`);
+        count++;
       }
       fileInput.value = null;
-    };
-
+    }
     reader.readAsText(selectedFile);
   } 
   else {
     console.log("No file selected");
   }
+});
+
+runSimulation.addEventListener("click", () => {
+  alert("in");
+
+  for(let z = 0; z < count - 1; z++) {
+    maxTemp = temperatureData[z].maxTempFile;
+    minTemp = temperatureData[z].minTempFile;
+
+    if(maxTemp > 86) { 
+      maxTemp = 86;   
+    } //the growth rate of corn causes HEAT STRESS when exceeding 86F
+    if(minTemp < 50) {
+      alert("WARNING: CORN DOES NOT GROW WHEN TEMPERATURES ARE BELOW 50F, THUS MINIMUM TEMPERATURE HAS BEEN SET TO 50F.");
+      minTemp = 50;
+    } //corn will not grow below 50F
+    if(minTemp > maxTemp) {
+      alert("WARNING: IT IS IMPOSSIBLE FOR THE MINIMUM TEMPERATURE TO BE GREATER THAN THE MAXIMUM TEMPERATURE, THUS MINIMUM TEMPERATURE HAS BEEN SET TO THE MAXIMUM TEMPERATURE.");
+      minTemp = maxTemp;
+    }
+    addedGDU = (maxTemp + minTemp) / 2 - baseTemp;
+    GDU += addedGDU;
+    days++;
+  }
+    if(growthLevels < 220) {
+
+      if(GDU > 100 && VE == false)
+      {
+        growthLevels += 20;
+        VE = true;
+        alert("Corn emergence has occured! (VE Stage)");
+      }
+      if(GDU > 200 && VTW == false)
+      {
+        growthLevels += 20;
+        VTW = true;
+        alert("2 Leaves are now fully emerged! (V2 Stage)");
+      }
+      if(GDU > 350 && VTH == false)
+      {
+        growthLevels += 20;
+        VTH = true;
+        alert("The photosynthetic process has began! (V3 Stage)");
+      }
+      if(GDU > 475 && VS == false)
+      {
+        growthLevels += 20;
+        VS = true;
+        alert("The growing point of the corn plant is near the surface! (V6 Stage)");
+      }
+      if(GDU > 610 && VN == false)
+      {
+        growthLevels += 20;
+        VN = true;
+        alert("8 Leaves have now formed! (V8 Stage)");
+      }
+      if(GDU > 740 && VTE == false)
+      {
+        growthLevels += 20;
+        VTE = true;
+        alert("10 Leaves have now emerged! (V10 Stage)");
+      }
+      if(GDU > 1135 && VT == false)
+      {
+        growthLevels += 20;
+        VT = true;
+        alert("The last branch of the tassel is visible! (VT Stage)");
+      }
+      if(GDU > 1660 && RT == false)
+      {
+        growthLevels += 20;
+        RT = true;
+        alert("The kernal is now white and shaped like a blister! (R2 Stage)");
+      }
+      if(GDU > 1925 && RF == false)
+      {
+        growthLevels += 20;
+        RF = true;
+        alert("The inner fluid has began thickening! (R4 Stage)");
+      }
+      if(GDU > 2450 && RV == false)
+      {
+        growthLevels += 20;
+        RV = true;
+        alert("The kernals have began to dry down towards the cob! (R5 Stage)");
+      }
+      if(GDU > 2700 && RS == false)
+      {
+        growthLevels += 20;
+        RS = true;
+        alert("The kernals continue to gain weight until physiological maturity! (R6 Stage)");
+      }
+      cornPlants.forEach(plant => {
+        plant.style.height = growthLevels + "px";
+      });
+    }
+    else { //fix
+      alert("All corn plants are fully grown; congratulations!");
+    }
+
+  updateGDUCount();
 });
 
 simulationAssumptions.addEventListener("click", () => {
@@ -93,8 +197,8 @@ openTextBox.addEventListener("click", () => { //13html FIX
 }); 
 
 waterAllButton.addEventListener("click", () => {
-    if (growthLevels < 220) {
-
+    
+    if(growthLevels < 220) {
       maxTemp = parseInt(prompt("Enter the day " + days + " maximum temperature:"));
       minTemp = parseInt(prompt("Enter the day " + days + " minimum temperature:"));
       if (maxTemp > 86) { 
