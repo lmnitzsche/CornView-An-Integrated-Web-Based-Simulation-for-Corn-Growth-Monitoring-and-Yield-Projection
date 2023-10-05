@@ -9,30 +9,17 @@ const selectPlantingDate = document.getElementById("planting-date");
 const fileInput = document.getElementById("fileInput");
 
 //MAIN
-var maxTemp = parseInt(prompt("Enter the day 1 maximum temperature:"));
-var minTemp = parseInt(prompt("Enter the day 1 minimum temperature:"));
+var maxTemp;
+var minTemp;
 var baseTemp = 50;
-
-if (maxTemp > 86) { 
-    maxTemp = 86;   
-} //the growth rate of corn causes HEAT STRESS when exceeding 86F
-if (minTemp < 50) {
-  alert("WARNING: CORN DOES NOT GROW WHEN TEMPERATURES ARE BELOW 50F, THUS MINIMUM TEMPERATURE HAS BEEN SET TO 50F.");
-  minTemp = 50;
-} //corn will not grow below 50F
-if(minTemp > maxTemp) {
-  alert("WARNING: IT IS IMPOSSIBLE FOR THE MINIMUM TEMPERATURE TO BE GREATER THAN THE MAXIMUM TEMPERATURE, THUS MINIMUM TEMPERATURE HAS BEEN SET TO THE MAXIMUM TEMPERATURE.");
-  minTemp = maxTemp;
-}
-
-var GDU = (maxTemp + minTemp) / 2 - baseTemp; 
+var GDU = 0;
 var soilTexture = "fine"; //fine, pH below 7, or coarse, pH above 7
 var seedZone = "optimum"; //optimum by default
 var seedBed = "normal"; //normal by default
 var seedingDepth = "one"; //+15 GDU for each inch below two inches
 var plantingDate = "during"; //during by default
 var growthLevels = 0;
-var days = 2;
+var days = 1;
 var count = 1; //used in read in function
 var addedGDU = 0;
 const temperatureData = []; //values from file
