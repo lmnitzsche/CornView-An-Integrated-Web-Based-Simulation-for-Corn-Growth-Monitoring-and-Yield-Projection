@@ -58,7 +58,6 @@ fileInput.addEventListener("change", function () {
         const maxTempFile = parseInt(values[i].trim());
         const minTempFile = parseInt(values[i + 1].trim());
         temperatureData.push({maxTempFile, minTempFile});
-        alert(`Day ${count}: ${maxTempFile}, ${minTempFile}`);
         count++;
       }
       fileInput.value = null;
@@ -71,7 +70,6 @@ fileInput.addEventListener("change", function () {
 });
 
 runSimulation.addEventListener("click", () => {
-  alert("in");
 
   for(let z = 0; z < count - 1; z++) {
     maxTemp = temperatureData[z].maxTempFile;
