@@ -1,5 +1,6 @@
 const soilColor = document.querySelector(".soil");
 const cornPlants = document.querySelectorAll(".corn-plant1, .corn-plant2, .corn-plant3, .corn-plant4, .corn-plant5, .corn-plant6, .corn-plant7, .corn-plant8, .corn-plant9, .corn-plant10, .corn-plant11, .corn-plant12, .corn-plant13, .corn-plant14, .corn-plant15, .corn-plant16, .corn-plant17, .corn-plant18, .corn-plant19, .corn-plant20");
+const dayCount = document.getElementById("dayValue");
 const gduCount = document.getElementById("gduValue");
 const selectSoilTexure = document.getElementById("soil-texture");
 const selectSeedZone = document.getElementById("seed-zone");
@@ -17,15 +18,17 @@ var soilTexture = "fine"; //fine, pH below 7, or coarse, pH above 7
 var seedZone = "optimum"; //optimum by default
 var seedBed = "normal"; //normal by default
 var seedingDepth = "one"; //+15 GDU for each inch below two inches
-var plantingDate = "during"; //during by default
+var plantingDate = "before"; //before by default
 var growthLevels = 0;
 var days = 1;
 var count = 1; //used in read in function
 var addedGDU = 0;
 const temperatureData = []; //values from file
 var randomizerGDU = Math.floor(Math.random() * 30) + 30;
+var insertSpace = " ";
 
 GDU += randomizerGDU; //add 30-60 GDU for fine soil
+GDU += 15; //add 15 GDU for early plant date
 
 var VE = false; //Corn Growth Stages... VE Stage
 var VTW = false; //V2 Stage
@@ -44,6 +47,10 @@ var RS = false; //R6 Stage... Final Stage
 function updateGDUCount() {
   gduCount.textContent = GDU;
 }
+function updateDayCount() {
+  dayCount.textContent = days + insertSpace;
+}
+
 //FINISH 80html
 fileInput.addEventListener("change", function () {
   const selectedFile = fileInput.files[0];
@@ -165,8 +172,8 @@ runSimulation.addEventListener("click", () => {
     else { //fix
       alert("All corn plants are fully grown; congratulations!");
     }
-
-  updateGDUCount();
+    updateGDUCount();
+    updateDayCount();
 });
 
 simulationAssumptions.addEventListener("click", () => {
@@ -275,49 +282,11 @@ waterAllButton.addEventListener("click", () => {
       alert("All corn plants are fully grown; congratulations!");
     }
     updateGDUCount();
+    updateDayCount();
 });
 
 restartSimulation.addEventListener("click", () => {
-    soilTexture = "fine";
-    growthLevels = 0;
-    days = 2;
-    addedGDU = 0;
-    
-    VE = false; //Corn Growth Stages... VE Stage
-    VTW = false; //V2 Stage
-    VTH = false; //V3 Stage
-    VS = false; //V6 Stage
-    VN = false; //V8 Stage
-    VTE = false; //V10 Stage
-    VT = false; //VT Stage
-    RT = false; //R2 Stage
-    RF = false; //R4 Stage
-    RV = false; //R5 Stage
-    RS = false; //R6 Stage
-
-    maxTemp = parseInt(prompt("Enter the day 1 maximum temperature:"));
-    minTemp = parseInt(prompt("Enter the day 1 minimum temperature:"));
-
-    if(maxTemp > 86) { 
-      maxTemp = 86;   
-    } //the growth rate of corn causes HEAT STRESS when exceeding 86F
-    if(minTemp < 50 ) {
-      alert("WARNING: CORN DOES NOT GROW WHEN TEMPERATURES ARE BELOW 50F, THUS MINIMUM TEMPERATURE HAS BEEN SET TO 50F.");
-      minTemp = 50;
-    }
-    if(minTemp > maxTemp) {
-      alert("WARNING: IT IS IMPOSSIBLE FOR THE MINIMUM TEMPERATURE TO BE GREATER THAN THE MAXIMUM TEMPERATURE, THUS MINIMUM TEMPERATURE HAS BEEN SET TO THE MAXIMUM TEMPERATURE.");
-      minTemp = maxTemp;
-    }
-
-    GDU = (maxTemp + minTemp) / 2 - baseTemp; 
-    GDU += randomizerGDU //fine soil
-    updateGDUCount();
-
-    cornPlants.forEach(plant => {
-        plant.style.height = growthLevels + "px";
-    });
-    soilColor.style.backgroundColor = "brown";
+    window.location.href = "index.html"
 });
 
 selectSoilTexure.addEventListener("change", function() {
@@ -332,6 +301,7 @@ selectSoilTexure.addEventListener("change", function() {
           soilColor.style.backgroundColor = "brown";
         }
         updateGDUCount();
+        updateDayCount();
         break;
 
       case "coarse":
@@ -342,6 +312,7 @@ selectSoilTexure.addEventListener("change", function() {
           soilColor.style.backgroundColor = "gray";
         }
         updateGDUCount();
+        updateDayCount();
         break;
     }
 });
@@ -357,6 +328,7 @@ selectSeedZone.addEventListener("change", function() {
         GDU -= 30;
       }
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "belowoptimum":
@@ -366,6 +338,7 @@ selectSeedZone.addEventListener("change", function() {
         GDU += 30;
       }
       updateGDUCount();
+      updateDayCount();
       break;
     }
 });
@@ -381,6 +354,7 @@ selectSeedBed.addEventListener("change", function() {
         GDU -= 30;
       }
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "soilcrusting":
@@ -390,6 +364,7 @@ selectSeedBed.addEventListener("change", function() {
       }
       seedBed = "soilcrusting"
       updateGDUCount();
+      updateDayCount();
       break;
     
     case "massiveclods":
@@ -399,6 +374,7 @@ selectSeedBed.addEventListener("change", function() {
       }
       seedBed = "massiveclods"
       updateGDUCount();
+      updateDayCount();
       break;
     }
 });
@@ -418,6 +394,7 @@ selectSeedingDepth.addEventListener("change", function() {
       }
       seedingDepth = "one";
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "onefive":
@@ -431,6 +408,7 @@ selectSeedingDepth.addEventListener("change", function() {
       }
       seedingDepth = "onefive";
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "two":
@@ -444,6 +422,7 @@ selectSeedingDepth.addEventListener("change", function() {
       }
       seedingDepth = "two";
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "twofive":
@@ -457,6 +436,7 @@ selectSeedingDepth.addEventListener("change", function() {
       }
       seedingDepth = "twofive";
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "three":
@@ -470,6 +450,7 @@ selectSeedingDepth.addEventListener("change", function() {
       }
       seedingDepth = "three";
       updateGDUCount();
+      updateDayCount();
       break;
   }
 });
@@ -489,6 +470,7 @@ selectPlantingDate.addEventListener("change", function() {
       }
       plantingDate = "during";
       updateGDUCount();
+      updateDayCount();
       break;
     
     case "before":
@@ -502,6 +484,7 @@ selectPlantingDate.addEventListener("change", function() {
       }
       plantingDate = "before";
       updateGDUCount();
+      updateDayCount();
       break;
 
     case "after":
@@ -515,6 +498,7 @@ selectPlantingDate.addEventListener("change", function() {
       }
       plantingDate = "after";
       updateGDUCount();
+      updateDayCount();
       break;
 
   }

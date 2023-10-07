@@ -8,7 +8,8 @@
   <h4><b>Created by <a href="https://logannitzsche.com">Logan Nitzsche</a></b></h4>
 </head>
 <body>
-  <span>GDU: <span id="gduValue">calculating...</span></span>
+  <span>Day <span id="dayValue"> 1 </span></span>GDU: <span id="gduValue">calculating...</span></span>
+  <br>
   <div class="gui">
         <input type="text" id="textBox" placeholder="Coming Soon" style="display: none;">
       <div class="simulation">
@@ -38,6 +39,13 @@
       </div>
     </div>
     <div class="toggles">
+    <br>
+    <h2>CONTROL PANNEL</h2>
+    <h4><u><b>Temperature Input</b></u></h4>
+    <input type="file" id="fileInput" accept=".txt">
+    <br>
+    <br>
+    <button class="coolbutton" id="runSimulation">Run Simulation</button>
     <h4><u><b>Toggles</b></u></h4>
     <label for="soil-texture">Soil Texture:</label>
     <br>
@@ -72,16 +80,12 @@
         <label for="planting-date">Planting Date:</label>
         <br>
         <select id="planting-date" name="planting-date">
-          <option value="during">Traditional</option>
-          <option value="before">Before April</option>
+          <option value="before">Before April 1</option>
+          <option value="during">April 1 to May 15</option>
           <option value="after">After May 15</option>
         </select>
         <br>
-        <h4><u><b>Temperature Input</b></u></h4>
-        <input type="file" id="fileInput" accept=".txt">
         <br>
-        <br>
-        <button id="runSimulation">Run Simulation</button>
     </div>
   </div>
   <div class="buttons">
