@@ -42,6 +42,9 @@ var RF = false; //R4 Stage
 var RV = false; //R5 Stage
 var RS = false; //R6 Stage... Final Stage
 
+var moderateDrought = false; //high likilihood of Moderate Drought
+var severeDrought = false; //high likilihood of Severe Drought
+var extremeDrought = false; //high likilihood of Extreme Drought
 
 //END OF MAIN... functions/event listeners
 function updateGDUCount() {
@@ -176,8 +179,44 @@ runSimulation.addEventListener("click", () => {
     updateDayCount();
 });
 
+document.getElementById("probability-drought").addEventListener("change", function () {
+  var selectedValue = this.value;
+  if(selectedValue === "illinois") {
+      openModalIllinois();
+  }
+});
+
+function openModalIllinois() {
+  const illinoisContainer = document.getElementById("state-container");
+  const illinoisModal = document.getElementById("illinois-Model")
+  illinoisContainer.style.display = "block";
+
+  var xRedZone = 150; //X coordinates (right = lower numbers)
+  var yRedZone = 150; //Y coordinates (higher = lower numbers)
+  var radiusModerate = 40;
+  var radiusSevere = 25;
+  
+  illinoisModal.addEventListener("click", function () {
+    var rect = illinoisModal.getBoundingClientRect();
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+    var distance = Math.sqrt(Math.pow(x - xRedZone, 2) + Math.pow(y - yRedZone, 2));
+
+    if(distance <= radiusSevere) {
+      alert("Chance of Severe Drought")
+      severeDrought = true;
+    }
+    else if(distance <= radiusModerate) {
+      alert("Chance of Moderate Drought");
+      moderateDrought = true;
+    }
+    
+    illinoisContainer.style.display = "none";
+  });
+}
+
 simulationAssumptions.addEventListener("click", () => {
-    alert("This 20-crop simulation assumes statistically average upkeep.");
+    alert("This 20-crop simulation assumes statistically average upkeep and uses precipitation averages from Summer 2022.");
 }); //before april = +10-25 GDU, after May 15 = -50-70 GDU
 
 openTextBox.addEventListener("click", () => { //13html FIX

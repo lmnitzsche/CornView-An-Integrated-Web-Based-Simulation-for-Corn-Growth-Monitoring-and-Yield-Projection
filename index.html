@@ -6,6 +6,13 @@
   <link rel="stylesheet" href="styles.css">
   <h1><b>Multi-Agent Simulation for Corn Growth Modeling: An Interactive Environment</b></h1>
   <h4><b>Created by <a href="https://logannitzsche.com">Logan Nitzsche</a></b></h4>
+  <div id="state-container" class="modal">
+    <br><br><br><br>
+    <h1>Select Region:</h1>
+    <div class="modal-content">
+      <img src="images/illinois.png" alt="Illinois" id="illinois-Model">
+    </div>
+  </div>
 </head>
 <body>
   <span>Day <span id="dayValue"> 1 </span></span>GDU: <span id="gduValue">calculating...</span></span>
@@ -85,6 +92,12 @@
           <option value="after">After May 15</option>
         </select>
         <br>
+        <label for="probability-drought">Drought Conditions:</label>
+        <br>
+        <select id="probability-drought" name="probability-drought">
+          <option value="none">Off</option>
+          <option value="illinois">Illinois</option>
+        </select>
         <br>
     </div>
   </div>
@@ -99,7 +112,6 @@
   <br>
   <br>
   <a href="subpages/readMe.html" class="highlight">Travel to Read Me</a>
-
   <script src="script.js"></script>
 </body> 
 </html>
