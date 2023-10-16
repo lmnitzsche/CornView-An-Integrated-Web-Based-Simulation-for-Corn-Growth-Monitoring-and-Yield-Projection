@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <h1 class="blueOutline"><b>Environmental Text File Creation</b></h1>
+</head>
+<body class="skyBack">
+    <div class="fileCreation">
+        <h4><u><b>Toggles</b></u></h4>
+        <label for="soil-texture">Soil Texture:</label>
+            <select name="soil-texture" id="soil-texture">
+                <option value="fine">Fine Soil</option>
+                <option value="coarse">Coarse Soil</option>
+            </select>
+        <br>
+        <label for="seed-zone">Seed-zone soil moisture:</label>
+            <select id="seed-zone" name="seed-zone">
+                <option value="optimum">Optimum</option>
+                <option value="belowoptimum">Below Optimum</option>
+            </select>
+            <br>
+            <label for="seed-bed">Seed-bed Condition:</label>
+            <select id="seed-bed" name="seed-bed">
+                <option value="normal">Normal</option>
+                <option value="soilcrusting">Soil Crusting</option>
+                <option value="massiveclods">Massive Clods</option>
+            </select>
+            <br>
+            <label for="seeding-depth">Seeding Depth:</label>
+            <select id="seeding-depth" name="seeding-depth">
+            <option value="one">1 inch</option>
+            <option value="onefive">1.5 inches</option>
+            <option value="two">2 inches</option>
+            <option value="twofive">2.5 inches</option>
+            <option value="three">3 inches</option>
+            </select>
+            <br>
+            <label for="planting-date">Planting Date:</label>
+            <select id="planting-date" name="planting-date">
+            <option value="before">Before April 1</option>
+            <option value="during">April 1 to May 15</option>
+            <option value="after">After May 15</option>
+            </select>
+            <br><br>
+            <button class="coolbutton" onclick="generateTextFile()">Create File</button>
+    </div>
+    <a class="white" href="fileCreationPage.html">Return to Text File Creation Page</a>
+    <br><br>
+    <a class="white" href="../index.html">Return to Simulation</a>
+  <script src="../script.js"></script>
+</body> 
+</html>

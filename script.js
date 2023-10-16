@@ -542,3 +542,28 @@ selectPlantingDate.addEventListener("change", function() {
 
   }
 });
+
+//Generate File
+function generateTextFile() {
+  const values = [
+    selectSoilTexure.value,
+    selectSeedZone.value,
+    selectSeedBed.value,
+    selectSeedingDepth.value,
+    selectPlantingDate.value
+  ];
+
+  const content = values.join(', ');
+
+  const blob = new Blob([content], { type: 'text/plain' });
+
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'dropdown_values.txt';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}

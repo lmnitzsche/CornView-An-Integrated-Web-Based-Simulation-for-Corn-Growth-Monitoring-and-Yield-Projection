@@ -6,6 +6,9 @@ body {
   padding: 0;
   margin: 0;
 }
+.skyBack {
+  background-image: url("images/sky.jpeg");
+}
 
 a {
   color: black;
@@ -67,6 +70,14 @@ select:hover {
   overflow: hidden;
 }
 
+.fileCreation {
+  flex: .4;
+  margin: 1vw;
+  height: 400px;
+  background-color: #ff9100;
+  overflow: auto;
+}
+
 .buttons {
   text-align: center;
   margin-top: 20px;
@@ -82,13 +93,31 @@ select:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.coolbutton:hover {
-  background-color: black;
-  color: #b300ff;
-}
 
 button:hover {
   color: #b300ff;
+}
+
+.blueOutline {
+  color: orange;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,  
+    -1px 1px 0 black, 
+    1px 1px 0 black;  
+}
+
+.white {
+  color: white;
+}
+
+.white:hover {
+  color: orange;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,  
+    -1px 1px 0 black, 
+    1px 1px 0 black;  
 }
 
 .modal {
