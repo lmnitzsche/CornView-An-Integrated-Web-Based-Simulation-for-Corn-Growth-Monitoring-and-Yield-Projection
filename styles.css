@@ -150,6 +150,11 @@ button:hover {
   margin: 0 auto;
 }
 
+  img {
+    max-width: 100px; /* Set the maximum width */
+    max-height: 100px; /* Set the maximum height */
+}
+
 .corn-plant1 {
   width: 10px;
   height: 0px;

@@ -559,7 +559,7 @@ function generateTextFile() {
 
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'dropdown_values.txt';
+  a.download = 'environmentalData.txt';
   a.style.display = 'none';
   document.body.appendChild(a);
   a.click();
