@@ -544,7 +544,7 @@ selectPlantingDate.addEventListener("change", function() {
 });
 
 //Generate File
-function generateTextFile() {
+function generateEnvTextFile() {
   const values = [
     selectSoilTexure.value,
     selectSeedZone.value,
@@ -566,4 +566,8 @@ function generateTextFile() {
 
   document.body.removeChild(a);
   URL.revokeObjectURL(a.href);
+}
+
+function generateTempTextFile() {
+
 }
