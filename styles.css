@@ -320,3 +320,14 @@ button:hover {
   bottom: 0;
   left: 0%;
 }
+
+#temperatureTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#temperatureTable th, #temperatureTable td {
+  border: 1px solid #000000;
+  padding: 5px;
+  text-align: center;
+}

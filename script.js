@@ -569,5 +569,30 @@ function generateEnvTextFile() {
 }
 
 function generateTempTextFile() {
+  const tempRows = document.querySelectorAll('#temperatureTable tr');
+  const temperatureData = [];
+  temperatureDaysCount = 0;
 
+  for(let i = 1; i <= 50; i++) {
+      const tempRow = tempRows[i];
+      const maxTempValue = tempRow.cells[1].querySelector('input[name="maxTemp"]').value;
+      const minTempValue = tempRow.cells[2].querySelector('input[name="minTemp"]').value;
+
+      if(maxTempValue || minTempValue) {
+          temperatureData.push(`${maxTempValue}, ${minTempValue},`);
+      }
+  }
+
+  const contentTwo = temperatureData.join('\n');
+  const blobTwo = new Blob([contentTwo], { type: 'text/plain' });
+
+  const b = document.createElement('a');
+  b.href = URL.createObjectURL(blobTwo);
+  b.download = 'temperatureData.txt';
+  b.style.display = 'none';
+  document.body.appendChild(b);
+  b.click();
+
+  document.body.removeChild(b);
+  URL.revokeObjectURL(b.href);
 }
