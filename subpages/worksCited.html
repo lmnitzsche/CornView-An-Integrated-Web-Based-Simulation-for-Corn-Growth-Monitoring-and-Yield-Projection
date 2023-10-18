@@ -7,20 +7,63 @@
             background-color: black;
             color: white;
         }
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         a {
             color: white;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
-            color: red
+            color: rgb(255, 0, 221);
+            text-shadow:
+                -1px -1px 0 black,
+                1px -1px 0 black,  
+                -1px 1px 0 black, 
+                1px 1px 0 black; 
         }
         li {
             margin: 15px;
         }
+        img {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.4); 
+        }
     </style>
+    <script>
+        var currentVideoIndex = 0; 
+        var videoSources = [
+            "../images/space.mp4",
+            "../images/spaceTwo.mp4",
+            "../images/spaceThree.mp4"
+        ];
+
+        function changeVideo() {
+            var video = document.getElementById("bgVideo");
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length; 
+            video.src = videoSources[currentVideoIndex];
+            video.load(); 
+            video.play(); 
+        }
+    </script>
 </head>
 <body>
+    <video autoplay muted loop id="bgVideo">
+        <source src="../images/space.mp4" type="video/mp4">
+    </video>
     <div align="center">
         <h1><u>Works Cited</u></h1>
     </div>
@@ -32,8 +75,12 @@
         <li>Kannenberg, L. W., and R. B. Hunter. <a href="https://acsess.onlinelibrary.wiley.com/doi/abs/10.2135/cropsci1972.0011183X001200030005x">"Yielding Ability and Competitive Influence in Hybrid Mixtures of Maize 1."</a> Crop Science 12.3 (1972): 274-277.</li>
         <li>Schneider, E. C., and S. C. Gupta. <a href="https://acsess.onlinelibrary.wiley.com/doi/abs/10.2136/sssaj1985.03615995004900020029x">"Corn emergence as influenced by soil temperature, matric potential, and aggregate size distribution."</a> Soil Science Society of America Journal 49.2 (1985): 415-422.</li>
     </ul>
+    <br>
     <div align="center">
         <a href="../index.html"><b>Return to Simulation</b></a>
+        <br><br><br>
+        <img onclick="changeVideo()" src="../images/eclipse.gif" alt="Eclipse">
+        <br><br><br>
     </div>
 </body>
 </html>
