@@ -7,7 +7,8 @@ const selectSeedZone = document.getElementById("seed-zone");
 const selectSeedBed = document.getElementById("seed-bed");
 const selectSeedingDepth = document.getElementById("seeding-depth");
 const selectPlantingDate = document.getElementById("planting-date");
-const fileInput = document.getElementById("fileInput");
+const fileInputTemp = document.getElementById("fileInput");
+const fileInputEnvironmental = document.getElementById("fileInputEnvironmental");
 
 //MAIN
 var maxTemp;
@@ -54,9 +55,8 @@ function updateDayCount() {
   dayCount.textContent = days + insertSpace;
 }
 
-//FINISH 80html
-fileInput.addEventListener("change", function () {
-  const selectedFile = fileInput.files[0];
+fileInputTemp.addEventListener("change", function () {
+  const selectedFile = fileInputTemp.files[0];
   if(selectedFile) {
     const reader = new FileReader();
 
@@ -70,9 +70,223 @@ fileInput.addEventListener("change", function () {
         temperatureData.push({maxTempFile, minTempFile});
         count++;
       }
-      fileInput.value = null;
+      fileInputTemp.value = null;
     }
     reader.readAsText(selectedFile);
+  } 
+  else {
+    console.log("No file selected");
+  }
+});
+
+fileInputEnvironmental.addEventListener("change", function () {
+  const selectedFileX = fileInputEnvironmental.files[0];
+  if(selectedFileX) {
+    const readerX = new FileReader();
+
+    readerX.onload = function(event) {
+      const fileTextX = event.target.result;
+      const valuesX = fileTextX.split(',');
+
+      const passedInsoilTexture = valuesX[0].trim();
+      const passedInseedZone = valuesX[1].trim();
+      const passedInseedBed = valuesX[2].trim();
+      const passedInseedingDepth = valuesX[3].trim();
+      const passedInplantingDate = valuesX[4].trim();
+      
+      switch(passedInsoilTexture) {
+        case "fine":
+          if(soilTexture === "coarse")
+          {
+            soilTexture = "fine";
+            GDU += 2 * randomizerGDU;
+            soilColor.style.backgroundColor = "brown";
+          }
+          updateGDUCount();
+          updateDayCount();
+          break;
+  
+        case "coarse":
+          if(soilTexture === "fine")
+          {
+            soilTexture = "coarse";
+            GDU -= 2 * randomizerGDU;
+            soilColor.style.backgroundColor = "gray";
+          }
+          updateGDUCount();
+          updateDayCount();
+          break;
+      }
+      switch(passedInseedZone) {
+        case "optimum":
+          if(seedZone === "belowoptimum")
+          {
+            seedZone = "optimum";
+            GDU -= 30;
+          }
+          updateGDUCount();
+          updateDayCount();
+          break;
+    
+        case "belowoptimum":
+          if(seedZone === "optimum")
+          {
+            seedZone = "belowoptimum";
+            GDU += 30;
+          }
+          updateGDUCount();
+          updateDayCount();
+          break;
+        }
+        switch(passedInseedBed) {
+          case "normal":
+            if(seedBed != "normal")
+            {
+              seedBed = "normal";
+              GDU -= 30;
+            }
+            updateGDUCount();
+            updateDayCount();
+            break;
+      
+          case "soilcrusting":
+            if(seedBed === "normal")
+            {
+              GDU += 30;
+            }
+            seedBed = "soilcrusting"
+            updateGDUCount();
+            updateDayCount();
+            break;
+          
+          case "massiveclods":
+            if(seedBed === "normal")
+            {
+              GDU += 30;
+            }
+            seedBed = "massiveclods"
+            updateGDUCount();
+            updateDayCount();
+            break;
+          }
+          switch(passedInseedingDepth) {
+            case "one":
+              if(seedingDepth === "twofive")
+              {
+                GDU -= 7.5;
+              }
+              else if(seedingDepth === "three")
+              {
+                GDU -= 15;
+              }
+              seedingDepth = "one";
+              updateGDUCount();
+              updateDayCount();
+              break;
+        
+            case "onefive":
+              if(seedingDepth === "twofive")
+              {
+                GDU -= 7.5;
+              }
+              else if(seedingDepth === "three")
+              {
+                GDU -= 15;
+              }
+              seedingDepth = "onefive";
+              updateGDUCount();
+              updateDayCount();
+              break;
+        
+            case "two":
+              if(seedingDepth === "twofive")
+              {
+                GDU -= 7.5;
+              }
+              else if(seedingDepth === "three")
+              {
+                GDU -= 15;
+              }
+              seedingDepth = "two";
+              updateGDUCount();
+              updateDayCount();
+              break;
+        
+            case "twofive":
+              if(seedingDepth === "three")
+              {
+                GDU -= 7.5;
+              }
+              else if(seedingDepth != "twofive")
+              {
+                GDU += 7.5;
+              }
+              seedingDepth = "twofive";
+              updateGDUCount();
+              updateDayCount();
+              break;
+        
+            case "three":
+              if(seedingDepth === "twofive")
+              {
+                GDU += 7.5;
+              }
+              else if(seedingDepth != "three")
+              {
+                GDU += 15;
+              }
+              seedingDepth = "three";
+              updateGDUCount();
+              updateDayCount();
+              break;
+          }
+          switch(passedInplantingDate) {
+            case "during":
+              if(plantingDate === "before")
+              {
+                GDU -= 15;
+              }
+              else if(plantingDate == "after")
+              {
+                GDU += 60;
+              }
+              plantingDate = "during";
+              updateGDUCount();
+              updateDayCount();
+              break;
+            
+            case "before":
+              if(plantingDate === "during")
+              {
+                GDU += 15; //+15 GDU for early planting date
+              }
+              else if(plantingDate == "after")
+              {
+                GDU += 75;
+              }
+              plantingDate = "before";
+              updateGDUCount();
+              updateDayCount();
+              break;
+        
+            case "after":
+              if(plantingDate === "during")
+              {
+                GDU -= 60; //-60 GDU for late planting date
+              }
+              else if(plantingDate == "before")
+              {
+                GDU -= 75; 
+              }
+              plantingDate = "after";
+              updateGDUCount();
+              updateDayCount();
+              break;
+          }
+
+      fileInputEnvironmental.value = null;
+    }
+    readerX.readAsText(selectedFileX);
   } 
   else {
     console.log("No file selected");
@@ -220,9 +434,10 @@ simulationAssumptions.addEventListener("click", () => {
 }); //before april = +10-25 GDU, after May 15 = -50-70 GDU
 
 openTextBox.addEventListener("click", () => { //13html FIX
-  if (textBox.style.display === "none") {
+  if(textBox.style.display === "none") {
     textBox.style.display = "block"; // Show the text box
-  } else {
+  }
+  else {
     textBox.style.display = "none"; // Hide the text box
   }
 }); 
@@ -539,7 +754,6 @@ selectPlantingDate.addEventListener("change", function() {
       updateGDUCount();
       updateDayCount();
       break;
-
   }
 });
 
@@ -596,3 +810,15 @@ function generateTempTextFile() {
   document.body.removeChild(b);
   URL.revokeObjectURL(b.href);
 }
+
+const extraButton = document.getElementById('toggle-environment-button');
+const extraDisplay = document.querySelector('.environment-toggles');
+
+extraButton.addEventListener('click', () => {
+  if (extraDisplay.style.display === 'none') {
+    extraDisplay.style.display = 'block';
+  } else {
+    extraDisplay.style.display = 'none';
+  }
+  extraButton.remove();
+});

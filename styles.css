@@ -42,6 +42,7 @@ select:hover {
   flex: .2;
   margin: 1vw;
   height: 400px;
+  color: black;
   background-color: #b300ff;
   overflow: auto;
 }
@@ -330,4 +331,8 @@ button:hover {
   border: 1px solid #000000;
   padding: 5px;
   text-align: center;
+}
+
+#toggle-environment-button:hover {
+  transform: scale(1.4);
 }
