@@ -822,3 +822,18 @@ extraButton.addEventListener('click', () => {
   }
   extraButton.remove();
 });
+
+const fileInputButton = document.getElementById("fileInputButton");
+const manualInputButton = document.getElementById("manualInputButton");
+const fileInputSection = document.getElementById("fileInputSection");
+const manualInputSection = document.getElementById("manualInputSection");
+
+fileInputButton.addEventListener("click", function () {
+  fileInputSection.style.display = "block";
+  manualInputSection.style.display = "none";
+});
+
+manualInputButton.addEventListener("click", function () {
+  fileInputSection.style.display = "none";
+  manualInputSection.style.display = "block";
+});
