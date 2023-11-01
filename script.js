@@ -812,7 +812,7 @@ function generateTempTextFile() {
 }
 
 const extraButton = document.getElementById('toggle-environment-button');
-const extraDisplay = document.querySelector('.environment-toggles');
+const extraDisplay = document.querySelector('.rv-toggles');
 
 extraButton.addEventListener('click', () => {
   if (extraDisplay.style.display === 'none') {
