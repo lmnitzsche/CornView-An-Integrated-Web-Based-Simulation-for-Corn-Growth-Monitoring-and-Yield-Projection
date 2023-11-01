@@ -336,3 +336,30 @@ button:hover {
 #toggle-environment-button:hover {
   transform: scale(1.4);
 }
+
+.input-switch-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.input-switch-button {
+  background-color: #b300ff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-switch-button:hover {
+  background-color: #9920cd;
+  color: white;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,  
+    -1px 1px 0 black, 
+    1px 1px 0 black; 
+}

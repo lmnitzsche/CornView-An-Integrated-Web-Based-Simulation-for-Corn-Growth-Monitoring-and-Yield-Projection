@@ -46,67 +46,77 @@
       </div>
     </div>
     <div class="toggles">
-    <br>
     <h2>CONTROL PANNEL</h2>
-    <h4><u><b>Temperature Input</b></u></h4>
-    <input type="file" id="fileInput" accept=".txt">
-    <h4><u><b>Environmental Input</b></u></h4>
-    <input type="file" id="fileInputEnvironmental" accept=".txt">
-    <br><br>
-    <button class="coolbutton" id="runSimulation">Run Simulation</button>
-    <br><br>
-    <h4><u><b>R.V. Toggles</b></u></h4>
-    <label for="probability-drought">Drought Conditions (WIP):</label>
+    <div class="input-switch-buttons">
+      <button id="fileInputButton" class="input-switch-button">File Input</button>
+      <button id="manualInputButton" class="input-switch-button">Manual Input</button>
+    </div>
+
+    <div id="fileInputSection" class="input-section" display="block">
+      <h4><u><b>Temperature Input</b></u></h4>
+      <input type="file" id="fileInput" accept=".txt">
+      <h4><u><b>Environmental Input</b></u></h4>
+      <input type="file" id="fileInputEnvironmental" accept=".txt">
+      <br><br>
+      <button class="coolbutton" id="runSimulation">Run Simulation</button>
+      <br><br>
+      <h4><u><b>R.V. Toggles</b></u></h4>
+      <label for="probability-drought">Drought Conditions (WIP):</label>
+          <br>
+          <select id="probability-drought" name="probability-drought">
+            <option value="none">Off</option>
+            <option value="illinois">Illinois</option>
+          </select>
+          <br><br>
+          <div id="toggle-environment-button">
+            <img src="images/arrow.gif" alt="Dancing Robot">
+          </div>
+      <div class="environment-toggles" style="display: none;">
+        <h4><u><b>Environmental Toggles</b></u></h4>
+        <label for="soil-texture">Soil Texture:</label>
         <br>
-        <select id="probability-drought" name="probability-drought">
-          <option value="none">Off</option>
-          <option value="illinois">Illinois</option>
-        </select>
-        <br><br>
-        <div id="toggle-environment-button">
-          <img src="images/arrow.gif" alt="Dancing Robot">
+            <select name="soil-texture" id="soil-texture">
+                <option value="fine">Fine Soil</option>
+                <option value="coarse">Coarse Soil</option>
+            </select>
+        <br>
+          <label for="seed-zone">Seed-zone soil moisture:</label>
+            <select id="seed-zone" name="seed-zone">
+                <option value="optimum">Optimum</option>
+                <option value="belowoptimum">Below Optimum</option>
+            </select>
+            <br>
+            <label for="seed-bed">Seed-bed Condition:</label>
+            <select id="seed-bed" name="seed-bed">
+                <option value="normal">Normal</option>
+                <option value="soilcrusting">Soil Crusting</option>
+                <option value="massiveclods">Massive Clods</option>
+            </select>
+            <br>
+            <label for="seeding-depth">Seeding Depth:</label>
+            <br>
+            <select id="seeding-depth" name="seeding-depth">
+              <option value="one">1 inch</option>
+              <option value="onefive">1.5 inches</option>
+              <option value="two">2 inches</option>
+              <option value="twofive">2.5 inches</option>
+              <option value="three">3 inches</option>
+            </select>
+            <br>
+            <label for="planting-date">Planting Date:</label>
+            <br>
+            <select id="planting-date" name="planting-date">
+              <option value="before">Before April 1</option>
+              <option value="during">April 1 to May 15</option>
+              <option value="after">After May 15</option>
+            </select>
+            <br><br>
         </div>
-    <div class="environment-toggles" style="display: none;">
-    <h4><u><b>Environmental Toggles</b></u></h4>
-    <label for="soil-texture">Soil Texture:</label>
-    <br>
-        <select name="soil-texture" id="soil-texture">
-            <option value="fine">Fine Soil</option>
-            <option value="coarse">Coarse Soil</option>
-        </select>
-    <br>
-      <label for="seed-zone">Seed-zone soil moisture:</label>
-        <select id="seed-zone" name="seed-zone">
-            <option value="optimum">Optimum</option>
-            <option value="belowoptimum">Below Optimum</option>
-        </select>
-        <br>
-        <label for="seed-bed">Seed-bed Condition:</label>
-        <select id="seed-bed" name="seed-bed">
-            <option value="normal">Normal</option>
-            <option value="soilcrusting">Soil Crusting</option>
-            <option value="massiveclods">Massive Clods</option>
-        </select>
-        <br>
-        <label for="seeding-depth">Seeding Depth:</label>
-        <br>
-        <select id="seeding-depth" name="seeding-depth">
-          <option value="one">1 inch</option>
-          <option value="onefive">1.5 inches</option>
-          <option value="two">2 inches</option>
-          <option value="twofive">2.5 inches</option>
-          <option value="three">3 inches</option>
-        </select>
-        <br>
-        <label for="planting-date">Planting Date:</label>
-        <br>
-        <select id="planting-date" name="planting-date">
-          <option value="before">Before April 1</option>
-          <option value="during">April 1 to May 15</option>
-          <option value="after">After May 15</option>
-        </select>
-        <br><br>
       </div>
+
+      <div id="manualInputSection" class="input-section" style="display: none;">
+      </div>
+
     </div>
   </div>
   <div class="buttons">
