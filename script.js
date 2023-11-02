@@ -837,3 +837,19 @@ manualInputButton.addEventListener("click", function () {
   fileInputSection.style.display = "none";
   manualInputSection.style.display = "block";
 });
+
+function changeText(element) {
+  element.textContent = "Travel to Temperature Text File Creation Page";
+}
+
+function restoreText(element) {
+  element.textContent = "Temperature Input";
+}
+
+function changeTextTwo(element) {
+  element.textContent = "Travel to Environmental Text File Creation Page";
+}
+
+function restoreTextTwo(element) {
+  element.textContent = "Environmental Input";
+}

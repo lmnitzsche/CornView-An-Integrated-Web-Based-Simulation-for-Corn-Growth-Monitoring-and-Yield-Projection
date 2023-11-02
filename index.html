@@ -53,9 +53,9 @@
     </div>
 
     <div id="fileInputSection" class="input-section">
-      <h4><u><b>Temperature Input</b></u></h4>
+      <h4><u><b><a class="tfcpLink" href="subpages/createFileTemp.html" onmouseover="changeText(this)" onmouseout="restoreText(this)">Temperature Input</a></b></u></h4>
       <input type="file" id="fileInput" accept=".txt">
-      <h4><u><b>Environmental Input</b></u></h4>
+      <h4><u><b><a class="tfcpLink" href="subpages/createFile.html" onmouseover="changeTextTwo(this)" onmouseout="restoreTextTwo(this)">Environmental Input</a></b></u></h4>
       <input type="file" id="fileInputEnvironmental" accept=".txt">
       <br><br>
       <button class="coolbutton" id="runSimulation">Run Simulation</button>
@@ -119,7 +119,6 @@
               </select>
               <br>
               </div>
-              <br>
               <div class="rv-toggles">
                 <h4><u><b>R.V. Toggles</b></u></h4>
                 <label for="probability-drought">Drought Conditions (WIP):</label>

@@ -357,3 +357,13 @@ button:hover {
 .input-switch-button:hover {
   color: #9920cd;
 }
+
+.tfcpLink:hover {
+  color: white;
+  transition: color 0.3s;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,  
+    -1px 1px 0 black, 
+    1px 1px 0 black; 
+}
