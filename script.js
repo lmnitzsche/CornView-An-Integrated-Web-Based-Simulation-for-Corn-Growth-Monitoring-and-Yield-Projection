@@ -825,16 +825,25 @@ extraButton.addEventListener('click', () => {
 
 const fileInputButton = document.getElementById("fileInputButton");
 const manualInputButton = document.getElementById("manualInputButton");
+const semimanualInputButton = document.getElementById("semimanualInputButton");
 const fileInputSection = document.getElementById("fileInputSection");
 const manualInputSection = document.getElementById("manualInputSection");
 
 fileInputButton.addEventListener("click", function () {
+  extraButton.style.display = 'block';
   fileInputSection.style.display = "block";
   manualInputSection.style.display = "none";
 });
-
 manualInputButton.addEventListener("click", function () {
   fileInputSection.style.display = "none";
+  manualInputSection.style.display = "block";
+});
+semimanualInputButton.addEventListener("click", function () {
+  extraButton.style.display = 'none';
+  if(extraDisplay.style.display === 'block') {
+    extraDisplay.style.display = "none";
+  }
+  fileInputSection.style.display = "block";
   manualInputSection.style.display = "block";
 });
 

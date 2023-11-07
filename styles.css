@@ -347,15 +347,16 @@ img {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  
 }
 
 .input-switch-button {
   background-color: white;
   color: black;
   border: 2px solid black;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
