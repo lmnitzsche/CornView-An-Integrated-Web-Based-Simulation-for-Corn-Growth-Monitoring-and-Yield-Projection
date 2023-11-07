@@ -839,7 +839,7 @@ manualInputButton.addEventListener("click", function () {
 });
 
 function changeText(element) {
-  element.textContent = "Travel to Temperature Text File Creation Page";
+  element.textContent = "Temperature Input";
 }
 
 function restoreText(element) {
@@ -847,7 +847,7 @@ function restoreText(element) {
 }
 
 function changeTextTwo(element) {
-  element.textContent = "Travel to Environmental Text File Creation Page";
+  element.textContent = "Environmental Input";
 }
 
 function restoreTextTwo(element) {
