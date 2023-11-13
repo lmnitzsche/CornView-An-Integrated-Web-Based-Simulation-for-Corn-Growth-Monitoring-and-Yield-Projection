@@ -815,7 +815,7 @@ const extraButton = document.getElementById('toggle-environment-button');
 const extraDisplay = document.querySelector('.rv-toggles');
 
 extraButton.addEventListener('click', () => {
-  if (extraDisplay.style.display === 'none') {
+  if(extraDisplay.style.display === 'none') {
     extraDisplay.style.display = 'block';
   } else {
     extraDisplay.style.display = 'none';
@@ -828,27 +828,27 @@ const manualInputButton = document.getElementById("manualInputButton");
 const semimanualInputButton = document.getElementById("semimanualInputButton");
 const fileInputSection = document.getElementById("fileInputSection");
 const manualInputSection = document.getElementById("manualInputSection");
+const rvSection = document.getElementById("rvSection");
+
 
 fileInputButton.addEventListener("click", function () {
-  extraButton.style.display = 'block';
+  rvSection.style.display = "block";
   fileInputSection.style.display = "block";
   manualInputSection.style.display = "none";
 });
 manualInputButton.addEventListener("click", function () {
+  rvSection.style.display = "block";
   fileInputSection.style.display = "none";
   manualInputSection.style.display = "block";
 });
 semimanualInputButton.addEventListener("click", function () {
-  extraButton.style.display = 'none';
-  if(extraDisplay.style.display === 'block') {
-    extraDisplay.style.display = "none";
-  }
+  rvSection.style.display = "block";
   fileInputSection.style.display = "block";
   manualInputSection.style.display = "block";
 });
 
 function changeText(element) {
-  element.textContent = "Temperature Input";
+  element.innerHTML = "Temperature Input<br><a><span style='font-size: x-small; color: white;'>Click to Travel to Temperature Text File Creation Page</span></a>";
 }
 
 function restoreText(element) {
@@ -856,7 +856,7 @@ function restoreText(element) {
 }
 
 function changeTextTwo(element) {
-  element.textContent = "Environmental Input";
+  element.innerHTML = "Environmental Input<br><a><span style='font-size: x-small; color: white;'>Click to Travel to Environmental Text File Creation Page</span></a>";
 }
 
 function restoreTextTwo(element) {
