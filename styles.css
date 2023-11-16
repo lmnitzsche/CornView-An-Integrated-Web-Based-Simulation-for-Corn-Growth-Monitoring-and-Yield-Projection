@@ -128,6 +128,15 @@ button:hover {
     1px 1px 0 black;
 }
 
+.black {
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,  
+    -1px 1px 0 white, 
+    1px 1px 0 white; 
+}
+
 .imgu:hover {
   cursor: pointer;
 }
@@ -373,4 +382,36 @@ img {
     1px -1px 0 black,  
     -1px 1px 0 black, 
     1px 1px 0 black; 
+}
+
+.file-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #b300ff;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,  
+    -1px 1px 0 white, 
+    1px 1px 0 white; 
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; 
+  position: relative;
+}
+
+.file-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  transition: background 0.3s ease; 
+}
+
+.file-label:hover::before {
+  background: rgba(255, 255, 255, 0.5);
 }
