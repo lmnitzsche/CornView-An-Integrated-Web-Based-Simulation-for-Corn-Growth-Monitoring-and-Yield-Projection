@@ -426,8 +426,98 @@ function openModalIllinois() {
     }
     
     illinoisContainer.style.display = "none";
+
+    //BEGINNING OF DROUGHT WORK
+    if(severeDrought == true && VE == false) {
+      const randomDelay = [28, 35, 42][Math.floor(Math.random() * 3)];
+      days += randomDelay; //Sets you back 4 to 6 weeks
+      alert("Severe drought has pushed back your emergence several weeks.")
+      updateDayCount();
+    }
+    else if(severeDrought == true && RT == true) {
+      alert("Due to severe drought after silking, your crops have died; the simulation will restart.");
+      window.location.href = "index.html";
+    }
+    else if(severeDrought == true) {
+      const chanceOfWholePlantDeath = 0.2;
+      const chanceOfPartialDeath = 0.6;
+      const maxTasselsToDie = 5;
+      
+      if(randomOutcome < chanceOfWholePlantDeath) {
+        alert("Your crops have died; the simulation will restart.");
+        window.location.href = "index.html";
+      }
+      else if(randomOutcome < chanceOfWholePlantDeath + chanceOfPartialDeath) {
+        const numTasselsToDie = Math.floor(Math.random() * (maxTasselsToDie + 1));
+      }
+
+      cornPlants.forEach(plant => {
+        for(let i = 0; i < numTasselsToDie; i++) {
+          const randomTasselIndex = Math.floor(Math.random() * plant.children.length);
+          const tassel = plant.children[randomTasselIndex];
+  
+          if(tassel.style.display !== "none") {
+            tassel.style.display = "none";
+          }
+          else {
+            i--;
+          }
+        }
+      });
+    }
+
+    else if(moderateDrought == true && VE == false) {
+      const randomDelay = [7, 8, 9, 10, 11, 12, 13, 14][Math.floor(Math.random() * 3)];
+      days += randomDelay; //Sets you back 1 to 2 weeks
+      alert("Moderate drought has pushed back your emergence a couple weeks.")
+    }
+    else if(moderateDrought == true && RT == true) {
+      chanceOfPartialDeath = 0.4;
+      maxTasselsToDie = 3;
+
+      if(randomOutcome < chanceOfPartialDeath) {
+        numTasselsToDie = Math.floor(Math.random() * (maxTasselsToDie + 1));
+      }
+
+      cornPlants.forEach(plant => {
+        for(let i = 0; i < numTasselsToDie; i++) {
+          randomTasselIndex = Math.floor(Math.random() * plant.children.length);
+          tassel = plant.children[randomTasselIndex];
+  
+          if(tassel.style.display !== "none") {
+            tassel.style.display = "none";
+          }
+          else {
+            i--;
+          }
+        }
+      });
+    }
+    else if(moderateDrought == true) {
+      chanceOfPartialDeath = 0.4;
+      maxTasselsToDie = 3;
+
+      if(randomOutcome < chanceOfPartialDeath) {
+        numTasselsToDie = Math.floor(Math.random() * (maxTasselsToDie + 1));
+      }
+
+      cornPlants.forEach(plant => {
+        for(let i = 0; i < numTasselsToDie; i++) {
+          randomTasselIndex = Math.floor(Math.random() * plant.children.length);
+          tassel = plant.children[randomTasselIndex];
+  
+          if(tassel.style.display !== "none") {
+            tassel.style.display = "none";
+          }
+          else {
+            i--;
+          }
+        }
+      });
+    }
   });
 }
+//END OF DROUGHT WORK
 
 simulationAssumptions.addEventListener("click", () => {
     alert("This 20-crop simulation assumes statistically average upkeep and uses precipitation averages from Summer 2022.");
