@@ -348,10 +348,6 @@ img {
   text-align: center;
 }
 
-#toggle-environment-button:hover {
-  transform: scale(1.4);
-}
-
 .input-switch-buttons {
   display: flex;
   justify-content: space-between;

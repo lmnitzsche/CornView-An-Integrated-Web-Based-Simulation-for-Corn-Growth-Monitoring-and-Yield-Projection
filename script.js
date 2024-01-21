@@ -9,6 +9,7 @@ const selectSeedingDepth = document.getElementById("seeding-depth");
 const selectPlantingDate = document.getElementById("planting-date");
 const fileInputTemp = document.getElementById("fileInput");
 const fileInputEnvironmental = document.getElementById("fileInputEnvironmental");
+const textBox = document.getElementById('textBox');
 
 //MAIN
 var maxTemp;
@@ -53,6 +54,11 @@ function updateGDUCount() {
 }
 function updateDayCount() {
   dayCount.textContent = days + insertSpace;
+}
+function updateTextBox() {
+  let textBoxContent = '';
+  textBoxContent += 'Day ${days} GDU: ${GDU} \n';
+  textBox.textContent = textBoxContent;
 }
 
 fileInputTemp.addEventListener("change", function () {
@@ -530,7 +536,7 @@ openTextBox.addEventListener("click", () => { //13html FIX
   else {
     textBox.style.display = "none"; // Hide the text box
   }
-}); 
+});
 
 waterAllButton.addEventListener("click", () => {
     
@@ -627,6 +633,7 @@ waterAllButton.addEventListener("click", () => {
     }
     updateGDUCount();
     updateDayCount();
+    updateTextBox(days, GDU)
 });
 
 restartSimulation.addEventListener("click", () => {

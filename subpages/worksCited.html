@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works Cited</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
             background-color: black;
             color: white;
         }
@@ -39,9 +44,9 @@
             height: auto;
             transition: transform 0.3s;
         }
-        img:hover {
-            transform: scale(1.4); 
-        }
+        .imgu:hover {
+            cursor: pointer;
+          }
     </style>
     <script>
         var currentVideoIndex = 0; 
@@ -56,7 +61,9 @@
             currentVideoIndex = (currentVideoIndex + 1) % videoSources.length; 
             video.src = videoSources[currentVideoIndex];
             video.load(); 
-            video.play(); 
+            video.addEventListener('loadeddata', function() {
+                video.play();
+            });
         }
     </script>
 </head>
