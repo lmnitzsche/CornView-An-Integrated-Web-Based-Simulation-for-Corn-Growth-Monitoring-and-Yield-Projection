@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <h1><b>Multi-Agent Simulation for Corn Growth Modeling: An Interactive Environment</b></h1>
+  <h1><b>Computational Simulation for Dynamic Corn Growth Modeling: An Interactive Environment</b></h1>
   <h4><b>Created by <a href="https://logannitzsche.com">Logan Nitzsche</a></b></h4>
   <div id="state-container" class="modal">
     <br><br><br><br>
@@ -106,49 +106,44 @@
               <br>
             </div>
             
-            <div class="phenotype-toggles">
-              <h4><u><b>Phenotype Toggles</b></u></h4>
-              <label for="leaf-area-index">Leaf Area Index (LAI):</label>
+            <div class="numeric-toggles">
+              <h4><u><b>Numeric Toggles</b></u></h4>
+              
+              <label for="number-of-ears">Number of Ears:</label>
               <br>
-              <select name="leaf-area-index" id="leaf-area-index">
-                  <option value="average">Average</option>
-                  <option value="higher">Above Average</option>
-                  <option value="lower">Below Average</option>
-              </select>
+              <input type="number" name="number-of-ears" id="number-of-ears" placeholder="Enter the number of ears">
               <br>
-              <label for="stress-tolerance">Stress Tolerance:</label>
-              <br>
-              <select name="leaf-area-index" id="leaf-area-index">
-                  <option value="moderate">Average</option>
-                  <option value="high">Above Average</option>
-                  <option value="low">Below Average</option>
-              </select>
-              <br>
+              
               <label for="ear-size">Ear Size:</label>
               <br>
-              <select name="ear-size" id="ear-size">
-                  <option value="normal">Average</option>
-                  <option value="larger">Above Average</option>
-                  <option value="smaller">Below Average</option>
-              </select>
+              <input type="number" name="ear-size" id="ear-size" placeholder="Enter the ear size">
               <br>
-              <label for="kernal-count">Kernal Count:</label>
+              
+              <label for="number-of-kernels">Number of Kernels:</label>
               <br>
-              <select name="kernal-count" id="kernal-count">
-                  <option value="normalK">Average</option>
-                  <option value="more">Above Average</option>
-                  <option value="less">Below Average</option>
-              </select>
+              <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels">
               <br>
-              <label for="plant-height">Plant Height:</label>
+              
+              <label for="number-of-kernel-rows">Number of Kernel Rows:</label>
               <br>
-              <select name="kernal-count" id="kernal-count">
-                  <option value="on">On</option>
-                  <option value="off">Off</option>
-              </select>
+              <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows">
               <br>
-            </div>
-
+              
+              <label for="row-count">Row Count:</label>
+              <br>
+              <input type="number" name="row-count" id="row-count" placeholder="Enter the row count">
+              <br>
+              
+              <label for="number-of-acres">Number of Acres:</label>
+              <br>
+              <input type="number" name="number-of-acres" id="number-of-acres" placeholder="Enter the number of acres">
+              <br>
+              
+              <label for="number-of-bushels">Number of Bushels:</label>
+              <br>
+              <input type="number" name="number-of-bushels" id="number-of-bushels" placeholder="Enter the number of bushels">
+              <br>
+          </div>          
       </div>
       <div id="rvSection" class="input-section">
         <br>
