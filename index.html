@@ -17,6 +17,8 @@
 <body>
   <span>Day <span id="dayValue"> 1 </span></span>GDU: <span id="gduValue">calculating...</span></span>
   <br>
+  <span>Estimated Corn Yield: <span id="result">calculating...</span></span>
+  <br>
   <div class="gui">
         <input type="text" id="textBox" placeholder="Coming Soon" style="display: none;">
       <div class="simulation">
@@ -111,20 +113,20 @@
               
               <label for="number-of-ears">Ears per Acre:</label>
               <br>
-              <input type="number" name="number-of-ears" id="number-of-ears" placeholder="Enter the number of ears">
+              <input type="number" name="number-of-ears" id="number-of-ears" placeholder="Enter the number of ears" oninput="calculateCornYield()">
               <br>
               <label for="number-of-kernels">Kernal Rows per Ear:</label>
               <br>
-              <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels">
+              <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels" oninput="calculateCornYield()">
               <br>
               
               <label for="number-of-kernel-rows">Kernals per Row:</label>
               <br>
-              <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows">
+              <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows" oninput="calculateCornYield()">
               <br>
               <label for="number-of-bushels">Kernals per Kushel:</label>
               <br>
-              <input type="number" name="number-of-bushels" id="number-of-bushels" placeholder="Enter the number of bushels">
+              <input type="number" name="number-of-bushels" id="number-of-bushels" placeholder="Enter the number of bushels" oninput="calculateCornYield()">
               <br>
           </div>          
       </div>
@@ -146,17 +148,16 @@
       </div>
     </div>
   </div>
+  <h4 class="port"><u>Settings</u></h4>
   <div class="buttons">
     <button id="restartSimulation">Restart Simulation</button>
     <button id="openTextBox">Open Text Box</button>
     <button id="simulationAssumptions">View Assumptions</button>
   </div>
   <h4 class="port"><u>Teleport to Other Webpages</u></h4>
-  <a href="subpages/fileCreationPage.html" class="highlight">Travel to Text File Creation Page</a>
-  <br><br>
-  <a href="subpages/readMe.html" class="highlight">Travel to Read Me Page</a>
-  <br><br>
-  <a href="subpages/worksCited.html" class="highlight">Travel to Works Cited Page</a>
+  <a href="subpages/fileCreationPage.html" class="highlight">Text File Creation Page</a>
+  <a href="subpages/readMe.html" class="highlight">Read Me Page</a>
+  <a href="subpages/worksCited.html" class="highlight">Works Cited Page</a>
 
   <script src="script.js"></script>
 </body> 

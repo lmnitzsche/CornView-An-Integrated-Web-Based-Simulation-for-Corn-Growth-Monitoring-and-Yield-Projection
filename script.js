@@ -959,3 +959,14 @@ function changeTextTwo(element) {
 function restoreTextTwo(element) {
   element.textContent = "Environmental Input";
 }
+
+function calculateCornYield() {
+  var earsPerAcre = parseFloat(document.getElementById('number-of-ears').value);
+  var kernelRowsPerEar = parseFloat(document.getElementById('number-of-kernels').value);
+  var kernelsPerRow = parseFloat(document.getElementById('number-of-kernel-rows').value);
+  var kernelsPerBushel = parseFloat(document.getElementById('number-of-bushels').value);
+
+  var cornYield = (earsPerAcre * kernelRowsPerEar * kernelsPerRow) /(kernelsPerBushel * 90000)
+
+  document.getElementById('result').innerText =  cornYield.toFixed(2) + " bushels";
+}
