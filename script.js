@@ -926,22 +926,26 @@ const semimanualInputButton = document.getElementById("semimanualInputButton");
 const fileInputSection = document.getElementById("fileInputSection");
 const manualInputSection = document.getElementById("manualInputSection");
 const rvSection = document.getElementById("rvSection");
+const semimanualWarningSection = document.getElementById("semimanualHelp")
 
 
 fileInputButton.addEventListener("click", function () {
   rvSection.style.display = "block";
   fileInputSection.style.display = "block";
   manualInputSection.style.display = "none";
+  semimanualWarningSection.style.display = "none";
 });
 manualInputButton.addEventListener("click", function () {
   rvSection.style.display = "block";
   fileInputSection.style.display = "none";
   manualInputSection.style.display = "block";
+  semimanualWarningSection.style.display = "none";
 });
 semimanualInputButton.addEventListener("click", function () {
   rvSection.style.display = "block";
   fileInputSection.style.display = "block";
   manualInputSection.style.display = "block";
+  semimanualWarningSection.style.display = "block"
 });
 
 function changeText(element) {
