@@ -108,29 +108,7 @@
                 <option value="after">After May 15</option>
               </select>
               <br>
-              <br>
-            </div>
-            
-            <div class="numeric-toggles">
-              <h4><u><b>Numeric Toggles</b></u></h4>
-              
-              <label for="number-of-ears">Ears per Acre:</label>
-              <br>
-              <input type="number" name="number-of-ears" id="number-of-ears" placeholder="Enter the number of ears" oninput="calculateCornYield()">
-              <br>
-              <label for="number-of-kernels">Kernel Rows per Ear:</label>
-              <br>
-              <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels" oninput="calculateCornYield()">
-              <br>
-              <label for="number-of-kernel-rows">Kernels per Row:</label>
-              <br>
-              <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows" oninput="calculateCornYield()">
-              <br>
-              <label for="number-of-bushels">Kernels per Bushel:</label>
-              <br>
-              <input type="number" name="number-of-bushels" id="number-of-bushels" placeholder="Enter the number of bushels" oninput="calculateCornYield()">
-              <br>
-          </div>          
+            </div>          
       </div>
       <div id="rvSection" class="input-section">
         <br>
@@ -138,8 +116,8 @@
           <img class="imgu" src="images/arrow.gif" alt="Arrow">
         </div>
         <div class="rv-toggles" style="display: none;">
-          <h4><u><b>Other Toggles</b></u></h4>
-          <label for="genotype">Genotype:</label>
+          <h4><u><b>Additional Toggles</b></u></h4>
+          <label for="genotype">Genotype Selection:</label>
           <br>
           <select id="genotype" name="genotype">
             <option value="ckd932">CKD932</option>
@@ -164,6 +142,26 @@
             <option value="illinois">Illinois</option>
           </select>
           <br><br>
+          <div class="numeric-toggles">
+            <h4><u><b>Yield Calculator</b></u></h4>
+            <label for="number-of-ears">Ears per Acre:</label>
+            <br>
+            <input type="number" name="number-of-ears" id="number-of-ears" placeholder="Enter the number of ears" oninput="calculateCornYield()">
+            <br>
+            <label for="number-of-kernels">Kernel Rows per Ear:</label>
+            <br>
+            <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels" oninput="calculateCornYield()">
+            <br>
+            <label for="number-of-kernel-rows">Kernels per Row:</label>
+            <br>
+            <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows" oninput="calculateCornYield()">
+            <br>
+            <label for="number-of-bushels">Kernels per Bushel:</label>
+            <br>
+            <input type="number" name="number-of-bushels" id="number-of-bushels" placeholder="Enter the number of bushels" oninput="calculateCornYield()">
+            <br>
+        </div>
+        <br><br>
         </div>
       </div>
     </div>
