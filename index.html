@@ -122,7 +122,6 @@
               <br>
               <input type="number" name="number-of-kernels" id="number-of-kernels" placeholder="Enter the number of kernels" oninput="calculateCornYield()">
               <br>
-              
               <label for="number-of-kernel-rows">Kernels per Row:</label>
               <br>
               <input type="number" name="number-of-kernel-rows" id="number-of-kernel-rows" placeholder="Enter the number of kernel rows" oninput="calculateCornYield()">
@@ -139,7 +138,25 @@
           <img class="imgu" src="images/arrow.gif" alt="Arrow">
         </div>
         <div class="rv-toggles" style="display: none;">
-          <h4><u><b>R.V. Toggles</b></u></h4>
+          <h4><u><b>Other Toggles</b></u></h4>
+          <label for="genotype">Genotype:</label>
+          <br>
+          <select id="genotype" name="genotype">
+            <option value="ckd932">CKD932</option>
+            <option value="ckd933">CKD933</option>
+            <option value="29k42">29K42</option>
+            <option value="48k95">48K95</option>
+            <option value="25k56">25K56</option>
+            <option value="kt303">KT303</option>
+            <option value="kt304">KT304</option>
+            <option value="2234">2234</option>
+            <option value="2235">2235</option>
+            <option value="2236">2236</option>
+            <option value="nd6339">ND6339</option>
+            <option value="nd6340">ND6340</option>
+            <option value="nd6876">ND6876</option>
+          </select>
+          <br>
           <label for="probability-drought">Drought Conditions:</label>
           <br>
           <select id="probability-drought" name="probability-drought">

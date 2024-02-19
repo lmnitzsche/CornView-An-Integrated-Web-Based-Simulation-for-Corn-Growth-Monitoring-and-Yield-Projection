@@ -974,3 +974,149 @@ function calculateCornYield() {
 
   document.getElementById('result').innerText =  cornYield.toFixed(2) + " bushels";
 }
+
+const genotypeTraits = {
+  CKD932: {
+    daysToPollenShedding: 51.33, // 50%
+    daysToSilking: 55.00, // 50%
+    plantHeight: 154.33, // in cm
+    earHeight: 102.70, // in cm
+    grainWeight: 43.00, // 100 grain wt (g)
+    harvestIndex: 0.347,
+    grainYield: 9.031 // kg/plot
+  },
+  CKD933: {
+    daysToPollenShedding: 48.33,
+    daysToSilking: 51.33,
+    plantHeight: 163.70,
+    earHeight: 79.00,
+    grainWeight: 50.00,
+    harvestIndex: 0.311,
+    grainYield: 6.716
+  },
+  "24K42": {
+    daysToPollenShedding: 43.00,
+    daysToSilking: 46.67,
+    plantHeight: 161.70,
+    earHeight: 70.67,
+    grainWeight: 26.67,
+    harvestIndex: 0.371,
+    grainYield: 5.359
+  },
+  "39K71": {
+    daysToPollenShedding: 50.00,
+    daysToSilking: 53.33,
+    plantHeight: 178.70,
+    earHeight: 79.00,
+    grainWeight: 30.00,
+    harvestIndex: 0.354,
+    grainYield: 8.925
+  },
+  "48K95": {
+    daysToPollenShedding: 50.67,
+    daysToSilking: 53.67,
+    plantHeight: 173.30,
+    earHeight: 83.33,
+    grainWeight: 29.33,
+    harvestIndex: 0.345,
+    grainYield: 7.752
+  },
+  "25K56": {
+    daysToPollenShedding: 46.00,
+    daysToSilking: 49.33,
+    plantHeight: 139.00,
+    earHeight: 68.33,
+    grainWeight: 30.33,
+    harvestIndex: 0.398,
+    grainYield: 7.618
+  },
+  KT303: {
+    daysToPollenShedding: 48.00,
+    daysToSilking: 54.33,
+    plantHeight: 158.67,
+    earHeight: 92.67,
+    grainWeight: 29.00,
+    harvestIndex: 0.374,
+    grainYield: 9.532
+  },
+  KT304: {
+    daysToPollenShedding: 49.00,
+    daysToSilking: 51.33,
+    plantHeight: 230.70,
+    earHeight: 90.00,
+    grainWeight: 30.33,
+    harvestIndex: 0.375,
+    grainYield: 9.549
+  },
+  "2234": {
+    daysToPollenShedding: 52.00,
+    daysToSilking: 55.67,
+    plantHeight: 173.30,
+    earHeight: 98.67,
+    grainWeight: 29.00,
+    harvestIndex: 0.367,
+    grainYield: 7.152
+  },
+  "2235": {
+    daysToPollenShedding: 51.00,
+    daysToSilking: 51.33,
+    plantHeight: 225.33,
+    earHeight: 100.67,
+    grainWeight: 34.67,
+    harvestIndex: 0.461,
+    grainYield: 11.910
+  },
+  "2236": {
+    daysToPollenShedding: 53.33,
+    daysToSilking: 54.67,
+    plantHeight: 227.00,
+    earHeight: 104.33,
+    grainWeight: 32.00,
+    harvestIndex: 0.354,
+    grainYield: 6.554
+  },
+  ND6339: {
+    daysToPollenShedding: 48.00,
+    daysToSilking: 51.33,
+    plantHeight: 185.30,
+    earHeight: 86.00,
+    grainWeight: 33.00,
+    harvestIndex: 0.426,
+    grainYield: 9.637
+  },
+  ND6340: {
+    daysToPollenShedding: 48.33,
+    daysToSilking: 51.33,
+    plantHeight: 177.70,
+    earHeight: 81.33,
+    grainWeight: 30.33,
+    harvestIndex: 0.380,
+    grainYield: 9.716
+  },
+  ND6876: {
+    daysToPollenShedding: 47.33,
+    daysToSilking: 49.67,
+    plantHeight: 224.30,
+    earHeight: 98.00,
+    grainWeight: 35.33,
+    harvestIndex: 0.452,
+    grainYield: 12.51
+  }
+};
+
+const genotypeSelect = document.getElementById('genotype');
+
+// Event listener for genotype dropdown change
+genotypeSelect.addEventListener('change', function() {
+  const selectedGenotype = genotypeTraits[this.value];
+
+  // Accessing each variable
+  const daysToPollenShedding = selectedGenotype.daysToPollenShedding;
+  const daysToSilking = selectedGenotype.daysToSilking;
+  const plantHeight = selectedGenotype.plantHeight;
+  const earHeight = selectedGenotype.earHeight;
+  const grainWeight = selectedGenotype.grainWeight;
+  const harvestIndex = selectedGenotype.harvestIndex;
+  const grainYield = selectedGenotype.grainYield;
+
+});
