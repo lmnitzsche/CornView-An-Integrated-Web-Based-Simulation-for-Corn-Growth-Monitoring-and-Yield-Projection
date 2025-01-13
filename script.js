@@ -529,15 +529,6 @@ simulationAssumptions.addEventListener("click", () => {
     alert("This 20-crop simulation assumes statistically average upkeep and uses precipitation averages from Summer 2022.");
 }); //before april = +10-25 GDU, after May 15 = -50-70 GDU
 
-openTextBox.addEventListener("click", () => { //13html FIX
-  if(textBox.style.display === "none") {
-    textBox.style.display = "block"; // Show the text box
-  }
-  else {
-    textBox.style.display = "none"; // Hide the text box
-  }
-});
-
 waterAllButton.addEventListener("click", () => {
     
     if(growthLevels < 220) {
