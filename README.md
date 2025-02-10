@@ -1,6 +1,6 @@
 # CornView: A Web-Based Simulation for Corn Growth Monitoring and Yield Projection
 
-[Deployed Site](https://logannitzsche.com/CornView-An-Integrated-Web-Based-Simulation-for-Corn-Growth-Monitoring-and-Yield-Projection/)
+[Deployed Simulation](https://logannitzsche.com/CornView-An-Integrated-Web-Based-Simulation-for-Corn-Growth-Monitoring-and-Yield-Projection/)
 
 ## Project Overview
 
